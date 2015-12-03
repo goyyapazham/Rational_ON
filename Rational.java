@@ -3,7 +3,7 @@
 //HW41 -- In America, the Driver Sits on the Left
 //2015-12-04
 
-public class Rational {
+public class Rational implements Comparable {
 
     //instance vars
     private int num;
@@ -91,16 +91,20 @@ public class Rational {
        the other we are essentially finding the lcm of both denominators */
 
     public int compareTo(Rational r) {
-	int gcd = gcd(den, r.den);
-	int x = den / gcd;
+        int gcd = gcd(den, r.den);
+        int x = den / gcd;
 	int y = r.den / gcd;
 	if (num * y > r.num * x) return 1;
 	if (num * y == r.num * x) return 0;
 	return -1;
     }
 
-    public boolean equals(Rational r) {
-	return compareTo(r) == 0;
+    public int compareTo(Object o) {
+	return compareTo((Rational)o);
+    }
+
+    public boolean equals(Object o) {
+	return compareTo(o) == 0;
     }
     
     public static void main(String[] args) {
