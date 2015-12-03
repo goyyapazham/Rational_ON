@@ -103,6 +103,7 @@ public class Rational implements Comparable {
 	return compareTo((Rational)o);
     }
 
+
     public boolean equals(Object o) {
 	return compareTo(o) == 0;
     }
