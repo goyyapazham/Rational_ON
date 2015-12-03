@@ -100,7 +100,9 @@ public class Rational implements Comparable {
     }
 
     public int compareTo(Object o) {
-	return compareTo((Rational)o);
+	if (o instanceof Rational)
+	    return compareTo((Rational)o);
+	return 999;
     }
 
     public boolean equals(Object o) {
